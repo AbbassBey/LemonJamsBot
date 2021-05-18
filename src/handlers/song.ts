@@ -12,7 +12,7 @@ export const songHandler = Composer.command('bul', ctx => {
     const song = getCurrentSong(chat.id);
 
     if (song === null) {
-        ctx.reply('😑 Çalan şarkı yok...');
+        ctx.reply('😑 Bulamadım...');
         return;
     }
 
