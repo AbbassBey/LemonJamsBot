@@ -1,6 +1,6 @@
 import { bot } from '../bot';
 
-import { playHandler } from './basla';
+import { playHandler } from './cal';
 import { queueHandler } from './sira';
 import { songHandler } from './bul';
 import { pauseHandler } from './dur';
