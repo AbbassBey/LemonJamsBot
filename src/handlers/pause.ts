@@ -1,7 +1,7 @@
 import { Composer } from 'telegraf';
 import { pause } from '../tgcalls';
 
-export const pauseHandler = Composer.command(['pause', 'resume'], async ctx => {
+export const pauseHandler = Composer.command(['dur', 'devam'], async ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
@@ -9,7 +9,7 @@ export const pauseHandler = Composer.command(['pause', 'resume'], async ctx => {
     }
 
     const paused = await pause(chat.id);
-    const message = paused === null ? "There's nothing playing here." : paused ? 'Paused.' : 'Resumed.';
+    const message = paused === null ? "🙄 Oyanatacak bir şey yok" : paused ? 'dur.' : 'devam.';
 
     await ctx.reply(message);
 });
