@@ -2,7 +2,7 @@ import { Composer } from 'telegraf';
 import { getCurrentSong } from '../tgcalls';
 import escapeHtml from '@youtwitface/escape-html';
 
-export const songHandler = Composer.command('song', ctx => {
+export const songHandler = Composer.command('bul', ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
@@ -12,7 +12,7 @@ export const songHandler = Composer.command('song', ctx => {
     const song = getCurrentSong(chat.id);
 
     if (song === null) {
-        ctx.reply('There is no song playing.');
+        ctx.reply('😑 Çalan şarkı yok...');
         return;
     }
 
