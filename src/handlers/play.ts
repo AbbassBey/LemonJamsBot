@@ -5,7 +5,7 @@ export const playHandler = Composer.command('play', async ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
-        await ctx.reply('I can only play in groups.');
+        await ctx.reply('Sadece grupta çalışıyorum');
         return;
     }
 
@@ -13,7 +13,7 @@ export const playHandler = Composer.command('play', async ctx => {
     const text = ctx.message.text.slice(commandEntity.length + 1) || deunionize(ctx.message.reply_to_message)?.text;
 
     if (!text) {
-        await ctx.reply('You need to specify a YouTube URL.');
+        await ctx.reply('Bir 📽 YouTube URL si belirtmeniz gerekiyor.');
         return;
     }
 
@@ -23,11 +23,11 @@ export const playHandler = Composer.command('play', async ctx => {
 
     switch (index) {
         case -1:
-            message = 'Failed to download song.';
+            message = '😥indiremedim';
             break;
 
         case 0:
-            message = 'Playing.';
+            message = 'Basla.';
             break;
 
         default:
