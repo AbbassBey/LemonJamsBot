@@ -1,10 +1,10 @@
 import { bot } from '../bot';
 
-import { playHandler } from './play';
-import { queueHandler } from './queue';
-import { songHandler } from './song';
-import { pauseHandler } from './pause';
-import { skipHandler } from './skip';
+import { playHandler } from './basla';
+import { queueHandler } from './sira';
+import { songHandler } from './bul';
+import { pauseHandler } from './dur';
+import { skipHandler } from './atla';
 
 export const initHandlers = (): void => {
     bot.use(playHandler);
