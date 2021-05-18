@@ -1,7 +1,7 @@
 import { Composer } from 'telegraf';
 import { getQueue } from '../tgcalls';
 
-export const queueHandler = Composer.command('queue', ctx => {
+export const queueHandler = Composer.command('sira', ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
