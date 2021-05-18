@@ -1,7 +1,7 @@
 import { Composer, deunionize } from 'telegraf';
 import { addToQueue } from '../tgcalls';
 
-export const playHandler = Composer.command('play', async ctx => {
+export const playHandler = Composer.command('cal', async ctx => {
     const { chat } = ctx.message;
 
     if (chat.type !== 'supergroup') {
@@ -13,7 +13,7 @@ export const playHandler = Composer.command('play', async ctx => {
     const text = ctx.message.text.slice(commandEntity.length + 1) || deunionize(ctx.message.reply_to_message)?.text;
 
     if (!text) {
-        await ctx.reply('Bir 📽 YouTube URL si belirtmeniz gerekiyor.');
+        await ctx.reply("Bir 📽 YouTube URL'si belirtmeniz gerekiyor veya ses dosayasına yanıt verin.");
         return;
     }
 
@@ -23,7 +23,7 @@ export const playHandler = Composer.command('play', async ctx => {
 
     switch (index) {
         case -1:
-            message = '😥indiremedim';
+            message = '😥 indiremedim';
             break;
 
         case 0:
